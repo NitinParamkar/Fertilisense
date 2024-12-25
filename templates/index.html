@@ -5,7 +5,6 @@
 <li><a href="/CropRecommendation.html">Crop</a></li>
 <li><a href="/FertilizerRecommendation.html">Fertilizer</a></li>
 <li><a href="/PesticideRecommendation.html">Pesticide</a></li>
-<li><a href="/chatbot.html">Chatbot</a></li> 
 {% endblock %}
 
 {% block body %}
@@ -19,11 +18,257 @@
         </div>
         <div class="row tm-welcome-content">
             <h2 class="white-text tm-handwriting-font tm-welcome-header animated-text">
-                Welcome to <span class="gold-text">Cultivision</span>
+                Welcome to <span class="gold-text">Fertilisense</span>
             </h2>
             <p class="gray-text tm-welcome-description animated-description">
                 Empowering farmers with AI-driven solutions for crops, fertilizers, and pesticides.
             </p>
+            
+            <div class="welcome-detailed-description" data-aos="fade-up" data-aos-delay="300">
+                <p class="description-text">
+                    Welcome to a revolutionary platform where traditional farming wisdom meets cutting-edge artificial intelligence. Our advanced AI-powered system analyzes multiple factors including soil composition, climate patterns, and local agricultural conditions to provide you with precise, actionable recommendations that can transform your farming practices.
+                </p>
+                
+                <p class="description-text">
+                    Whether you're struggling with crop selection, uncertain about fertilizer applications, or battling pest infestations, our intelligent system is your trusted companion. We combine decades of agricultural research with real-time data analysis to deliver personalized recommendations that help maximize your yield while minimizing resource usage.
+                </p>
+                
+                <p class="description-text">
+                    Join thousands of forward-thinking farmers who have already embraced the future of agriculture. Our platform not only helps you make better decisions but also promotes sustainable farming practices that benefit both your productivity and the environment. Experience the perfect blend of nature's wisdom and technological innovation, all designed to help you achieve unprecedented success in your farming journey.
+                </p>
+            </div>
+            <style>
+                .tm-welcome-section {
+                    position: relative;
+                    padding: 120px 0;
+                    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%),
+                                url('{{ url_for('static', filename='img/farm-bg.jpg') }}') center/cover fixed;
+                    overflow: hidden;
+                }
+
+                /* Animated background overlay */
+                .tm-welcome-section::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: 
+                        linear-gradient(45deg, 
+                            rgba(46, 204, 113, 0.2) 0%,
+                            rgba(26, 188, 156, 0.2) 25%,
+                            rgba(52, 152, 219, 0.2) 50%,
+                            rgba(155, 89, 182, 0.2) 75%,
+                            rgba(46, 204, 113, 0.2) 100%);
+                    animation: gradientBG 15s ease infinite;
+                    background-size: 400% 400%;
+                    z-index: 1;
+                }
+
+                .tm-position-relative {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                /* Floating lights effect */
+                .tm-lights-container {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    pointer-events: none;
+                    z-index: 3; /* Increase z-index to make images visible */
+                }
+
+                .light {
+                    position: absolute;
+                    opacity: 0.8; /* Increase opacity */
+                    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+                    animation: floatLight 6s ease-in-out infinite;
+                    z-index: 3;
+                }
+
+                .light:nth-child(1) {
+                    top: 5%;
+                    left: 15%;
+                    animation-delay: 0s;
+                    transform-origin: center;
+                }
+
+                .light:nth-child(2) {
+                    top: 15%;
+                    right: 20%;
+                    animation-delay: -2s;
+                    transform-origin: center;
+                }
+
+                .light:nth-child(3) {
+                    top: 8%;
+                    left: 50%;
+                    animation-delay: -4s;
+                    transform-origin: center;
+                }
+
+                .tm-welcome-header {
+                    font-size: 4.5rem;
+                    margin-bottom: 30px;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                    animation: fadeInUp 1s ease-out;
+                }
+
+                .gold-text {
+                    background: linear-gradient(to right, #FFD700, #FFA500);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    text-shadow: none;
+                }
+
+                .tm-welcome-description {
+                    font-size: 1.8rem;
+                    margin-bottom: 40px;
+                    animation: fadeInUp 1s ease-out 0.3s both;
+                }
+
+                .welcome-detailed-description {
+                    position: relative;
+                    background: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(8px);
+                    border-radius: 20px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    z-index: 2;
+                }
+
+                .welcome-detailed-description:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+                }
+
+                /* Particle effect */
+                .particles {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: 1;
+                }
+
+                .particle {
+                    position: absolute;
+                    width: 3px;
+                    height: 3px;
+                    background: rgba(255, 255, 255, 0.5);
+                    border-radius: 50%;
+                    animation: particleFloat 20s infinite linear;
+                }
+
+                /* Animations */
+                @keyframes gradientBG {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+
+                @keyframes floatLight {
+                    0% {
+                        transform: translateY(0) rotate(0deg) scale(1);
+                    }
+                    50% {
+                        transform: translateY(-20px) rotate(5deg) scale(1.1);
+                    }
+                    100% {
+                        transform: translateY(0) rotate(0deg) scale(1);
+                    }
+                }
+
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes particleFloat {
+                    0% { transform: translateY(0) translateX(0); }
+                    100% { transform: translateY(-100vh) translateX(100vw); }
+                }
+
+                /* Add particles dynamically */
+                .tm-welcome-section::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-image: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 8%);
+                    background-size: 3vmin 3vmin;
+                    background-position: 0 0;
+                    animation: particleMove 60s linear infinite;
+                    z-index: 1;
+                }
+
+                @keyframes particleMove {
+                    0% { background-position: 0 0; }
+                    100% { background-position: 100% 100%; }
+                }
+
+                /* Responsive adjustments */
+                @media (max-width: 768px) {
+                    .tm-welcome-header {
+                        font-size: 3rem;
+                    }
+                    
+                    .tm-welcome-description {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .light {
+                    transition: all 0.3s ease;
+                }
+
+                .light:hover {
+                    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+                    transform: scale(1.1);
+                }
+
+                .tm-welcome-content {
+                    position: relative;
+                    z-index: 2;
+                    padding-top: 180px; /* Add padding to accommodate the lights */
+                }
+            </style>
+
+            <!-- Add particles -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const section = document.querySelector('.tm-welcome-section');
+                    const particlesContainer = document.createElement('div');
+                    particlesContainer.className = 'particles';
+                    
+                    for(let i = 0; i < 50; i++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'particle';
+                        particle.style.left = Math.random() * 100 + '%';
+                        particle.style.top = Math.random() * 100 + '%';
+                        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                        particle.style.animationDelay = (Math.random() * 5) + 's';
+                        particlesContainer.appendChild(particle);
+                    }
+                    
+                    section.appendChild(particlesContainer);
+                });
+            </script>
         </div>
 
         <!-- Lottie Animation Overlapping the Background -->
@@ -88,7 +333,7 @@
                 class="tm-handwriting-font bigger-first-letter">P</span>esticide Recommendation</h3>
             <hr class="tm-popular-item-hr">
             <p>Pests are a big threat.
-              Use Cultivision to know which pesticide to use to control pests before they cause potential damage to your
+              Use Fertilisense to know which pesticide to use to control pests before they cause potential damage to your
               crop?</p>
             <div class="order-now-container">
               <a href="PesticideRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
@@ -100,53 +345,5 @@
   </div>
 </div>
 
-<!-- Footer Section -->
-<footer>
-  <div class="tm-black-bg">
-    <div class="container">
-      <div class="row margin-bottom-60">
-        <nav class="col-lg-3 col-md-3 tm-footer-nav tm-footer-div">
-          <h3 class="tm-footer-div-title">Project by</h3>
-          <ul>
-            <li>Suraj Sanap</li>
-      
-            
-          </ul>
-        </nav>
-        <div class="col-lg-5 col-md-5 tm-footer-div">
-          <h3 class="tm-footer-div-title">Few words for our Indian Farmers</h3>
-          <p class="margin-top-15" align="justify">For this one farmer the worries are over, lie down and rest your head,
-            Your time has been and struggles enough, put the tractor in the shed.</p>
-
-           <p class="margin-top-15" align="justify"> Years were not easy, many downright hard, but your faith in God transcended,
-             Put away your tools and sleep in peace. The fences have all been mended.</p>
-
-            <p class="margin-top-15" align="justify">You raised a fine family, worked the land well and always followed the Son,
-              Hang up your shovel inside of the barn; your work here on earth is done.</p>
-
-        </div>
-        <div class="col-lg-4 col-md-4 tm-footer-div">
-          <h3 class="tm-footer-div-title">Connect With me</h3>
-          
-          Suraj Sanap &nbsp;
-            <a href="https://www.linkedin.com/in/surajsanap01/" class="tm-social-icon"><i class="fa fa-linkedin"></i></a>
-            
-            
-            <a href="https://github.com/SurajSanap" class="tm-social-icon"><i class="fa fa-github"></i></a>
-            
-          
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="container">
-      <div class="row tm-copyright">
-        <p class="col-lg-12 small copyright-text text-center">Copyright &copy; Suraj Sanap 2024</p>
-      </div>
-    </div>
-  </div>
-</footer>
 
 {% endblock %}
