@@ -12,9 +12,9 @@
     <div class="container tm-position-relative">
         <div class="tm-lights-container">
             <!-- Treepod Lights -->
-            <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light treepod-swing" height="188px" width="200px">
-            <img src="{{ url_for('static', filename='img/light.png') }}" alt="Light" class="light treepod-swing" height="188px" width="200px">
-            <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="light treepod-swing" height="188px" width="200px">
+            <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="static-light" height="188px" width="200px">
+            <img src="{{ url_for('static', filename='img/light.png') }}" alt="Light" class="static-light" height="188px" width="200px">
+            <img src="{{ url_for('static', filename='img/light2.png') }}" alt="Light" class="static-light" height="188px" width="200px">
         </div>
         <div class="row tm-welcome-content">
             <h2 class="white-text tm-handwriting-font tm-welcome-header animated-text">
@@ -73,42 +73,14 @@
 
                 /* Floating lights effect */
                 .tm-lights-container {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    pointer-events: none;
-                    z-index: 3; /* Increase z-index to make images visible */
+                    display: flex;
+                    justify-content: center;
+                    gap: 30px;
+                    margin-bottom: 20px;
                 }
 
-                .light {
-                    position: absolute;
-                    opacity: 0.8; /* Increase opacity */
-                    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
-                    animation: floatLight 6s ease-in-out infinite;
-                    z-index: 3;
-                }
-
-                .light:nth-child(1) {
-                    top: 5%;
-                    left: 15%;
-                    animation-delay: 0s;
-                    transform-origin: center;
-                }
-
-                .light:nth-child(2) {
-                    top: 15%;
-                    right: 20%;
-                    animation-delay: -2s;
-                    transform-origin: center;
-                }
-
-                .light:nth-child(3) {
-                    top: 8%;
-                    left: 50%;
-                    animation-delay: -4s;
-                    transform-origin: center;
+                .static-light {
+                    display: block;
                 }
 
                 .tm-welcome-header {
@@ -133,18 +105,99 @@
 
                 .welcome-detailed-description {
                     position: relative;
-                    background: rgba(255, 255, 255, 0.1);
-                    border: 1px solid rgba(255, 255, 255, 0.2);
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                    backdrop-filter: blur(8px);
+                    max-width: 1200px;
+                    margin: 40px auto;
+                    padding: 40px;
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
                     border-radius: 20px;
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    z-index: 2;
+                    backdrop-filter: blur(10px);
+                    box-shadow: 
+                        0 8px 32px 0 rgba(31, 38, 135, 0.37),
+                        inset 0 0 30px rgba(255, 255, 255, 0.05);
                 }
 
+                .welcome-detailed-description::before {
+                    content: '';
+                    position: absolute;
+                    top: -1px;
+                    left: -1px;
+                    right: -1px;
+                    bottom: -1px;
+                    background: linear-gradient(45deg, 
+                        rgba(46, 204, 113, 0.3),
+                        rgba(26, 188, 156, 0.3),
+                        rgba(52, 152, 219, 0.3));
+                    border-radius: 20px;
+                    z-index: -1;
+                    opacity: 0.5;
+                }
+
+                .description-text {
+                    color: #ffffff;
+                    font-size: 1.3rem;
+                    line-height: 1.8;
+                    margin-bottom: 25px;
+                    text-align: justify;
+                    font-weight: 300;
+                    letter-spacing: 0.3px;
+                    position: relative;
+                    padding: 0 10px;
+                }
+
+                .description-text:last-child {
+                    margin-bottom: 0;
+                }
+
+                /* Add decorative elements */
+                .welcome-detailed-description::after {
+                    content: '';
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    right: 20px;
+                    bottom: 20px;
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                    border-radius: 15px;
+                    pointer-events: none;
+                }
+
+                /* Add hover effect */
                 .welcome-detailed-description:hover {
                     transform: translateY(-5px);
-                    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+                    box-shadow: 
+                        0 12px 40px 0 rgba(31, 38, 135, 0.45),
+                        inset 0 0 30px rgba(255, 255, 255, 0.07);
+                    transition: all 0.3s ease;
+                }
+
+                /* Add paragraph icons */
+                .description-text::before {
+                    content: '🌱';
+                    margin-right: 10px;
+                    font-size: 1.2rem;
+                    opacity: 0.8;
+                }
+
+                .description-text:nth-child(2)::before {
+                    content: '🔍';
+                }
+
+                .description-text:nth-child(3)::before {
+                    content: '🌿';
+                }
+
+                /* Add responsive adjustments */
+                @media (max-width: 768px) {
+                    .welcome-detailed-description {
+                        margin: 30px 15px;
+                        padding: 30px 20px;
+                    }
+
+                    .description-text {
+                        font-size: 1.1rem;
+                        line-height: 1.6;
+                    }
                 }
 
                 /* Particle effect */
@@ -245,7 +298,7 @@
                 .tm-welcome-content {
                     position: relative;
                     z-index: 2;
-                    padding-top: 180px; /* Add padding to accommodate the lights */
+                    padding-top: 40px;
                 }
             </style>
 
