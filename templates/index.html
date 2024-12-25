@@ -40,7 +40,7 @@
             <style>
                 .tm-welcome-section {
                     position: relative;
-                    padding: 120px 0;
+                    padding: 60px 0;
                     background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%),
                                 url('{{ url_for('static', filename='img/farm-bg.jpg') }}') center/cover fixed;
                     overflow: hidden;
@@ -362,7 +362,7 @@
             <p>Which crop to grow, that is ideally suited to conditions?
               Make an informed decision before starting the cultivation of crops.</p>
             <div class="order-now-container">
-              <a href="CropRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
+              <a href="CropRecommendation.html" class="pill-button">Get Started</a>
             </div>
           </div>
         </div>
@@ -375,7 +375,7 @@
             <p>Which fertilizer to choose for the cultivated soil and prescribed crop for optimum production?
             Provide your crops, the essential nutrients.</p>
             <div class="order-now-container">
-              <a href="FertilizerRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
+              <a href="FertilizerRecommendation.html" class="pill-button">Get Started</a>
             </div>
           </div>
         </div>
@@ -389,7 +389,7 @@
               Use Fertilisense to know which pesticide to use to control pests before they cause potential damage to your
               crop?</p>
             <div class="order-now-container">
-              <a href="PesticideRecommendation.html" class="order-now-link tm-handwriting-font">Proceed Now</a>
+              <a href="PesticideRecommendation.html" class="pill-button">Get Started</a>
             </div>
           </div>
         </div>
@@ -398,5 +398,114 @@
   </div>
 </div>
 
+<style>
+    .tm-main-section {
+        background: linear-gradient(135deg, rgba(47, 79, 79, 0.95) 0%, rgba(47, 79, 79, 0.85) 100%);
+        padding: 80px 0;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    .tm-popular-items-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 30px;
+        max-width: 1600px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .tm-popular-item {
+        flex: 1;
+        width: 100%;
+        max-width: 400px;
+        min-height: 550px;
+        background: linear-gradient(135deg, rgba(47, 79, 79, 0.98), rgba(47, 79, 79, 0.95));
+        border-radius: 24px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 40px;  /* Increased padding at bottom */
+    }
+
+    .tm-popular-item-img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 30px;
+    }
+
+    .tm-popular-item-description {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 100%;
+        padding-bottom: 20px;  /* Space for button */
+    }
+
+    .tm-popular-item-title {
+        color: #ffffff;
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .tm-popular-item-description p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.4rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        font-weight: 400;
+    }
+
+    .order-now-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    .pill-button {
+        display: inline-block;
+        padding: 10px 30px;
+        background: linear-gradient(135deg, #4CAF50, #45a049);
+        color: white;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .pill-button:hover {
+        background: linear-gradient(135deg, #45a049, #4CAF50);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 1400px) {
+        .tm-popular-items-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .tm-popular-item {
+            width: 90%;
+            max-width: 450px;
+            margin-bottom: 0;
+        }
+    }
+</style>
 
 {% endblock %}
