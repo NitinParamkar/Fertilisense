@@ -344,21 +344,79 @@
   <div class="container" id="main">
     <section class="tm-section tm-section-margin-bottom-0 row">
       <div class="col-lg-12 tm-section-header-container">
-        <div class="tm-hr-container">
-          <hr class="tm-hr">
-        </div>
-        <h2 class="tm-section-header gold-text tm-handwriting-font">Our Services</h2>
-        <div class="tm-hr-container">
-          <hr class="tm-hr">
+        <div class="header-wrapper">
+          <h2 class="tm-section-header gold-text tm-handwriting-font">Our Services</h2>
         </div>
       </div>
+      <style>
+        .tm-section-header-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            padding: 0 15px;
+        }
+
+        .header-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tm-section-header {
+            font-size: 2.8rem;
+            display: inline-block;
+            position: relative;
+            padding: 0 30px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .tm-section-header::before,
+        .tm-section-header::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 80px;
+            height: 2px;
+            background: #f1c40f;
+            transform: translateY(-50%);
+        }
+
+        .tm-section-header::before {
+            left: -90px;
+        }
+
+        .tm-section-header::after {
+            right: -90px;
+        }
+
+        @media (max-width: 768px) {
+            .tm-section-header {
+                font-size: 2.4rem;
+                padding: 0 20px;
+            }
+            
+            .tm-section-header::before,
+            .tm-section-header::after {
+                width: 50px;
+            }
+            
+            .tm-section-header::before {
+                left: -60px;
+            }
+            
+            .tm-section-header::after {
+                right: -60px;
+            }
+        }
+      </style>
       <div class="col-lg-12 tm-popular-items-container">
         <div class="tm-popular-item">
           <img src="{{ url_for('static', filename='img/popular-2.jpg') }}" alt="Popular" class="tm-popular-item-img" width="286px" height="166px">
           <div class="tm-popular-item-description">
             <h3 class="tm-handwriting-font tm-popular-item-title"><span
                 class="tm-handwriting-font bigger-first-letter">C</span>rop Recommendation</h3>
-            <hr class="tm-popular-item-hr">
             <p>Which crop to grow, that is ideally suited to conditions?
               Make an informed decision before starting the cultivation of crops.</p>
             <div class="order-now-container">
@@ -371,7 +429,6 @@
           <div class="tm-popular-item-description">
             <h3 class="tm-handwriting-font tm-popular-item-title"><span
                 class="tm-handwriting-font bigger-first-letter">F</span>ertilizer Recommendation</h3>
-            <hr class="tm-popular-item-hr">
             <p>Which fertilizer to choose for the cultivated soil and prescribed crop for optimum production?
             Provide your crops, the essential nutrients.</p>
             <div class="order-now-container">
@@ -384,7 +441,6 @@
           <div class="tm-popular-item-description">
             <h3 class="tm-handwriting-font tm-popular-item-title"><span
                 class="tm-handwriting-font bigger-first-letter">P</span>esticide Recommendation</h3>
-            <hr class="tm-popular-item-hr">
             <p>Pests are a big threat.
               Use Fertilisense to know which pesticide to use to control pests before they cause potential damage to your
               crop?</p>
