@@ -18,6 +18,45 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Crop Prediction Result Styles */
+.crop-result-container {
+    min-height: 100vh;
+    background-color: #2F4F4F;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.crop-result-content {
+    background: linear-gradient(145deg, #1e3535, #2a4747);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.crop-result-title {
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.crop-result-title .gold-text {
+    color: #c79c60;
+    font-style: italic;
+}
+
+.crop-result-image {
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+    border: 2px solid rgba(199, 156, 96, 0.3);
+}
+
 .page-title {
     font-family: 'Damion', cursive;
     color: #c79c60;
