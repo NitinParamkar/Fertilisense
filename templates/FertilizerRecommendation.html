@@ -12,11 +12,11 @@
 {% endblock %}
 
 {% block body %}
-<div class="fertilizer-recommendation-container">
-    <div class="form-container">
+<div class="fertilizer-recommendation-container" style="background-color: #2f4f4f; min-height: 100vh; padding: 40px;">
+    <div class="form-container" style="margin: 60px auto; background-color: #2f4f4f;">
         <h2 class="page-title">Get informed advice on fertilizer based on soil</h2>
 
-        <form method="POST" action="{{url_for('fertilizer_recommend')}}">
+        <form method="POST" action="{{url_for('fertilizer_recommend')}}" style="background: linear-gradient(145deg, #1e3535, #2a4747); padding: 40px; border-radius: 20px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);">
             <div class="form-group">
                 <label for="Nitrogen">Nitrogen (ratio)</label>
                 <input type="number" class="form-control" id="Nitrogen" name="nitrogen"
@@ -36,38 +36,39 @@
             </div>
 
             <div class="form-group">
-                <label for="crop">Crop you want to grow</label>
-                <select name="cropname" class="form-control" id="crop" required>
-                    <option selected>apple</option>
-                    <option>banana</option>
-                    <option>blackgram</option>
-                    <option>chickpea</option>
-                    <option>coconut</option>
-                    <option>coffee</option>
-                    <option>cotton</option>
-                    <option>grapes</option>
-                    <option>groundnut</option>
-                    <option>jute</option>
-                    <option>kidneybeans</option>
-                    <option>lentil</option>
-                    <option>maize</option>
-                    <option>mango</option>
-                    <option>mothbeans</option>
-                    <option>mungbean</option>
-                    <option>muskmelon</option>
-                    <option>mustard</option>
-                    <option>orange</option>
-                    <option>paddy</option>
-                    <option>papaya</option>
-                    <option>pearlmillet</option>
-                    <option>pigeonpea</option>
-                    <option>pomegranate</option>
-                    <option>rapeseed</option>
-                    <option>rice</option>
-                    <option>sorghum</option>
-                    <option>sugarcane</option>
-                    <option>watermelon</option>
-                    <option>wheat</option>
+                <label for="crop" style="color: #c79c60; font-size: 1.1em; margin-bottom: 12px; display: block; font-weight: 500;">Crop you want to grow</label>
+                <select name="cropname" id="crop" required style="width: 100%; padding: 15px 20px; background: rgba(46, 74, 74, 0.9); border: 2px solid #c79c60; border-radius: 10px; color: #ffffff; font-size: 16px; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg fill=\'%23c79c60\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>'); background-repeat: no-repeat; background-position: right 15px center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease;">
+                    <option value="" selected disabled style="background: #2f4f4f; color: #c79c60;">Select crop</option>
+                    <option value="apple" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Apple</option>
+                    <option value="banana" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Banana</option>
+                    <option value="blackgram" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Blackgram</option>
+                    <option value="chickpea" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Chickpea</option>
+                    <option value="coconut" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Coconut</option>
+                    <option value="coffee" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Coffee</option>
+                    <option value="cotton" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Cotton</option>
+                    <option value="grapes" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Grapes</option>
+                    <option value="groundnut" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Groundnut</option>
+                    <option value="jute" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Jute</option>
+                    <option value="kidneybeans" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Kidneybeans</option>
+                    <option value="lentil" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Lentil</option>
+                    <option value="maize" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Maize</option>
+                    <option value="mango" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Mango</option>
+                    <option value="mothbeans" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Mothbeans</option>
+                    <option value="mungbean" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Mungbean</option>
+                    <option value="muskmelon" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Muskmelon</option>
+                    <option value="mustard" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Mustard</option>
+                    <option value="orange" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Orange</option>
+                    <option value="paddy" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Paddy</option>
+                    <option value="papaya" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Papaya</option>
+                    <option value="pearlmillet" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Pearlmillet</option>
+                    <option value="pigeonpea" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Pigeonpea</option>
+                    <option value="pomegranate" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Pomegranate</option>
+                    <option value="rapeseed" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Rapeseed</option>
+                    <option value="rice" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Rice</option>
+                    <option value="sorghum" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Sorghum</option>
+                    <option value="sugarcane" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Sugarcane</option>
+                    <option value="watermelon" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Watermelon</option>
+                    <option value="wheat" style="background: #2f4f4f; color: #ffffff; padding: 12px;">Wheat</option>
                 </select>
             </div>
 

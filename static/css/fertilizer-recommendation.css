@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #2F4F4F;
+    background-color: #90EE90;  /* Light green background */
     padding: 20px;
 }
 
@@ -30,6 +30,7 @@
 .form-group {
     margin-bottom: 25px;
     position: relative;
+    width: 100%;
 }
 
 .form-group label {
@@ -44,12 +45,12 @@
 .form-control {
     width: 100%;
     padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(144, 238, 144, 0.1) !important;  /* Light green with transparency */
     border: 1px solid rgba(199, 156, 96, 0.3);
     border-radius: 10px;
     font-size: 1em;
     transition: all 0.3s ease;
-    color: #fff;
+    color: #ffffff;
 }
 
 .form-control::placeholder {
@@ -57,24 +58,272 @@
 }
 
 .form-control:focus {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(144, 238, 144, 0.15) !important;  /* Slightly more opaque on focus */
     border-color: #c79c60;
     box-shadow: 0 0 15px rgba(199, 156, 96, 0.2);
     outline: none;
 }
 
+/* Dropdown Styles */
+.dropdown-toggle {
+    background: rgba(144, 238, 144, 0.1) !important;
+    border: 1px solid rgba(199, 156, 96, 0.3) !important;
+    color: #ffffff !important;
+    text-align: left !important;
+    width: 100% !important;
+    padding: 12px 20px !important;
+    border-radius: 10px !important;
+    font-size: 16px !important;
+    min-height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.dropdown-toggle::after {
+    border-top-color: #c79c60 !important;
+    margin-left: 10px !important;
+    vertical-align: middle !important;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    background: rgba(144, 238, 144, 0.15) !important;
+    border-color: #c79c60 !important;
+    box-shadow: 0 0 15px rgba(199, 156, 96, 0.2) !important;
+}
+
+.dropdown-menu {
+    background-color: #90EE90 !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin-top: 5px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    max-height: 300px !important;
+    overflow-y: auto !important;
+}
+
+.dropdown-item {
+    color: #000000 !important;
+    padding: 12px 20px !important;
+    font-size: 16px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    white-space: normal !important;
+    transition: all 0.2s ease !important;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none !important;
+}
+
+.dropdown-item:hover, 
+.dropdown-item:focus {
+    background-color: #2ecc71 !important;
+    color: #000000 !important;
+}
+
+/* Scrollbar Styling */
+.dropdown-menu::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #90EE90 !important;
+    border-radius: 0 10px 10px 0 !important;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #2ecc71 !important;
+    border-radius: 10px !important;
+}
+
+/* Ensure dropdown button maintains style when active/focused */
+.dropdown-toggle:active,
+.dropdown-toggle:focus,
+.dropdown.show .dropdown-toggle {
+    background: rgba(144, 238, 144, 0.15) !important;
+    border-color: #c79c60 !important;
+    box-shadow: 0 0 15px rgba(199, 156, 96, 0.2) !important;
+}
+
+/* Dropdown specific styles */
 select.form-control {
-    cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(199, 156, 96, 0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    padding: 12px 40px 12px 20px;
+    min-height: 50px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c79c60' d='M6 9L0 0h12z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1em;
+    background-position: right 15px center;
+    background-size: 12px;
 }
 
 select.form-control option {
-    background-color: #2a4747;
-    color: #fff;
+    background-color: #90EE90 !important;
+    color: #000000 !important;
+    padding: 12px 20px;
+    min-height: 40px;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Ensure selected option is fully visible */
+select.form-control option:checked,
+select.form-control option:hover {
+    background-color: #2ecc71 !important;
+    color: #000000 !important;
+}
+
+/* Fertilizer Dropdown Styles */
+.fertilizer-dropdown {
+    width: 100%;
+    padding: 12px 40px 12px 20px;
+    background: rgba(144, 238, 144, 0.1) !important;  /* Light green with transparency */
+    border: 1px solid rgba(199, 156, 96, 0.3);
+    border-radius: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c79c60' d='M6 9L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    min-height: 50px;
+    transition: all 0.3s ease;
+}
+
+.fertilizer-dropdown:focus {
+    outline: none;
+    border-color: #c79c60;
+    box-shadow: 0 0 15px rgba(199, 156, 96, 0.2);
+    background: rgba(144, 238, 144, 0.15) !important;  /* Slightly more opaque on focus */
+}
+
+/* Override default option styles */
+.fertilizer-dropdown option {
+    background-color: #90EE90 !important;
+    color: #000000 !important;
+    padding: 15px !important;
+    font-size: 16px !important;
+    min-height: 40px !important;
+    border: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Style for hover and selected states */
+.fertilizer-dropdown option:hover,
+.fertilizer-dropdown option:checked,
+.fertilizer-dropdown option:focus {
+    background-color: #2ecc71 !important;
+    color: #000000 !important;
+    width: 100% !important;
+}
+
+/* Remove default select arrow in IE */
+.fertilizer-dropdown::-ms-expand {
+    display: none;
+}
+
+/* Firefox specific styles */
+.fertilizer-dropdown {
+    -moz-appearance: none !important;
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Webkit specific styles */
+.fertilizer-dropdown {
+    -webkit-appearance: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Ensure dropdown menu has correct background */
+.fertilizer-dropdown:focus option,
+.fertilizer-dropdown option:checked {
+    background-color: #90EE90 !important;
+    color: #000000 !important;
+    width: 100% !important;
+}
+
+/* Custom Dropdown Styles */
+.custom-dropdown {
+    width: 100%;
+    padding: 12px 40px 12px 20px;
+    background: rgba(144, 238, 144, 0.1);
+    border: 1px solid rgba(199, 156, 96, 0.3);
+    border-radius: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c79c60' d='M6 9L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    min-height: 50px;
+    transition: all 0.3s ease;
+}
+
+.custom-dropdown:focus {
+    outline: none;
+    border-color: #c79c60;
+    box-shadow: 0 0 15px rgba(199, 156, 96, 0.2);
+    background: rgba(144, 238, 144, 0.15);
+}
+
+/* Style the options */
+.custom-dropdown option {
+    background-color: #90EE90;
+    color: #000000;
+    padding: 12px 20px;
+    font-size: 16px;
+    min-height: 40px;
+}
+
+/* Style for hover and selected states */
+.custom-dropdown option:hover,
+.custom-dropdown option:checked {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+/* Remove default select arrow in IE */
+.custom-dropdown::-ms-expand {
+    display: none;
+}
+
+/* Firefox specific styles */
+.custom-dropdown {
+    text-overflow: ellipsis;
+}
+
+/* Webkit specific styles for the dropdown arrow */
+.custom-dropdown {
+    background-position: calc(100% - 15px) center;
+}
+
+/* Placeholder styling */
+.custom-dropdown option[value=""][disabled] {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .predict-btn {
