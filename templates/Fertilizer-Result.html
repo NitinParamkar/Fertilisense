@@ -8,15 +8,34 @@
 {% endblock %}
 
 {% block body %}
-<div style="padding-top: 5%; padding-bottom: 5%; padding-left: 15%; padding-right: 15%;">
-    <p style="color: #c79c60; font-size: 20px; font-family: 'Recursive', sans-serif;">
-        Difference between desired value of N and your farm's N value is {{ diff_n }}</p>
-    <p style="color: black; font-size: 20px; font-family: 'Recursive', sans-serif;">{{ recommendation1 | safe }}</p>
-    <p style="color: #c79c60; font-size: 20px; font-family: 'Recursive', sans-serif;">
-        Difference between desired value of P and your farm's P value is {{ diff_p }}</p>
-    <p style="color: black; font-size: 20px; font-family: 'Recursive', sans-serif;">{{ recommendation2 | safe }}</p>
-    <p style="color: #c79c60; font-size: 20px; font-family: 'Recursive', sans-serif;">
-        Difference between desired value of K and your farm's K value is {{ diff_k }}</p>
-    <p style="color: black; font-size: 20px; font-family: 'Recursive', sans-serif;">{{ recommendation3 | safe }}</p>
+<div style="background-color: #2f4f4f; min-height: 100vh; padding: 60px 40px; display: flex; flex-direction: column; align-items: center;">
+    <div style="background: linear-gradient(145deg, #1e3535, #2a4747); padding: 40px; border-radius: 20px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); width: 100%; max-width: 1000px; margin: 0 auto;">
+        <div style="margin-bottom: 40px;">
+            <p style="color: #c79c60; font-size: 24px; font-family: 'Damion', cursive; margin-bottom: 15px; font-weight: 600; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                Difference between desired value of N and your farm's N value is {{ diff_n }}
+            </p>
+            <p style="color: #ffffff; font-size: 18px; font-family: 'Recursive', sans-serif; line-height: 1.8; margin-bottom: 0;">
+                {{ recommendation1 | safe }}
+            </p>
+        </div>
+
+        <div style="margin-bottom: 40px;">
+            <p style="color: #c79c60; font-size: 24px; font-family: 'Damion', cursive; margin-bottom: 15px; font-weight: 600; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                Difference between desired value of P and your farm's P value is {{ diff_p }}
+            </p>
+            <p style="color: #ffffff; font-size: 18px; font-family: 'Recursive', sans-serif; line-height: 1.8; margin-bottom: 0;">
+                {{ recommendation2 | safe }}
+            </p>
+        </div>
+
+        <div>
+            <p style="color: #c79c60; font-size: 24px; font-family: 'Damion', cursive; margin-bottom: 15px; font-weight: 600; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                Difference between desired value of K and your farm's K value is {{ diff_k }}
+            </p>
+            <p style="color: #ffffff; font-size: 18px; font-family: 'Recursive', sans-serif; line-height: 1.8; margin-bottom: 0;">
+                {{ recommendation3 | safe }}
+            </p>
+        </div>
+    </div>
 </div>
 {% endblock %}
