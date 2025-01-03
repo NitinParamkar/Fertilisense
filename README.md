@@ -1,12 +1,9 @@
-# CultiVision
+# Fertilisense
 
 ## Problem Definition
 * Farmers face challenges in choosing the right crop based on soil characteristics, leading to reduced productivity and soil degradation.
 * Lack of awareness about soil requirements, organic fertilizers, and standard fertilizers contributes to imbalanced fertilization and nutrient management issues.
-* Annual crop losses of Rs. 50,000 crore occur due to pests in India.
-  
-![Screen Recording 2024-11-23 193838](https://github.com/user-attachments/assets/328fff0d-4ad5-4dd3-b8c5-c1a44fe2fae4)
-
+* Annual crop losses of Rs. 50,000 crore occur due to pests in India. 
 
 
 ## Objective
