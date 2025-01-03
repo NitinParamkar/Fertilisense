@@ -5,10 +5,6 @@
 * Lack of awareness about soil requirements, organic fertilizers, and standard fertilizers contributes to imbalanced fertilization and nutrient management issues.
 * Annual crop losses of Rs. 50,000 crore occur due to pests in India.
   
-![Screen Recording 2024-11-23 193838](https://github.com/user-attachments/assets/328fff0d-4ad5-4dd3-b8c5-c1a44fe2fae4)
-
-
-
 ## Objective
 * Implement precision agriculture to guide farmers in crop selection and increase productivity.
 * Propose an ensemble model using SVM, Random Forest, Naive Bayes, and kNN for accurate crop recommendation.
