@@ -8,32 +8,79 @@
 {% endblock %}
 
 {% block body %}
-<br /><br />
-<h2 style="text-align: center; margin: 0px; color: black">
-  <b>Recommended pesticide based on pest</b>
-</h2>
-<h3 align="center">Please upload the picture which clearly shows the pest,<br>
-            so that we can recommend you, the pesticide accordingly!</h3>
-<br />
+<div style="background-color: #2f4f4f; min-height: 100vh; padding: 40px;">
+    <div style="margin: 60px auto; background-color: #2f4f4f; max-width: 800px;">
+        <h2 style="text-align: center; margin-bottom: 30px; color: #c79c60; font-size: 2.2em; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+            Recommended Pesticide Based on Pest
+        </h2>
+        <h3 style="text-align: center; color: #ffffff; font-size: 1.3em; margin-bottom: 40px; font-weight: 400; line-height: 1.6;">
+            Please upload a clear picture of the pest<br>so we can recommend the appropriate pesticide
+        </h3>
 
-<div
-  style="
-    width: 350px;
-    height: 40rem;
-    margin: 0px auto;
-    color: black;
-    border-radius: 25px;
-    padding: 10px 10px;
-  "
->
-    <section>
-            <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
-                <input type="file" name="image" class="upload" style="font-size: 15px;">
-                <br>
-                <input type="submit" value="Predict" style="color: #c79c60; font-weight: bold;
-                background-color: black;
-                width: 130px; height:50px; border-radius:12px; font-size: 21px;">
+        <div style="background: linear-gradient(145deg, #1e3535, #2a4747); padding: 40px; border-radius: 20px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); max-width: 600px; margin: 0 auto;">
+            <form id="pestForm" action="/predict" method="post" enctype="multipart/form-data" onsubmit="return validateForm(event)" style="display: flex; flex-direction: column; align-items: center; gap: 25px;">
+                <div style="width: 100%; text-align: center;">
+                    <input type="file" name="image" id="imageInput" class="upload" style="
+                        background: rgba(46, 74, 74, 0.9);
+                        border: 2px solid #c79c60;
+                        border-radius: 10px;
+                        color: #ffffff;
+                        padding: 15px;
+                        width: 80%;
+                        font-size: 16px;
+                        cursor: pointer;
+                        margin-bottom: 20px;
+                    ">
+                    <div id="errorMessage" style="
+                        color: #ff6b6b;
+                        font-size: 14px;
+                        margin-top: 10px;
+                        visibility: hidden;
+                        text-align: center;
+                    ">Please choose a file before proceeding</div>
+                </div>
+                <input type="submit" value="Predict" style="
+                    background-color: #c79c60;
+                    color: #2f4f4f;
+                    font-weight: bold;
+                    width: 180px;
+                    height: 55px;
+                    border-radius: 12px;
+                    font-size: 21px;
+                    border: none;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                    &:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+                        background-color: #d4ab6a;
+                    }
+                ">
             </form>
-    </section>
+        </div>
+    </div>
 </div>
+
+<script>
+function validateForm(event) {
+    event.preventDefault();
+    const fileInput = document.getElementById('imageInput');
+    const errorMessage = document.getElementById('errorMessage');
+    
+    if (!fileInput.files || fileInput.files.length === 0) {
+        errorMessage.style.visibility = 'visible';
+        return false;
+    }
+    
+    errorMessage.style.visibility = 'hidden';
+    document.getElementById('pestForm').submit();
+    return true;
+}
+
+// Hide error message when file is selected
+document.getElementById('imageInput').addEventListener('change', function() {
+    document.getElementById('errorMessage').style.visibility = 'hidden';
+});
+</script>
 {% endblock %}
