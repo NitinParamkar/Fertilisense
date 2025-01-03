@@ -8,29 +8,38 @@
 {% endblock %}
 
 {% block body %}
-<br /><br />
-<h2 style="text-align: center; margin: 0px; color: black">
-    <b>Identified Pest: <i>beetle</i></b>
-</h2>
+<div style="background-color: #2f4f4f; min-height: 100vh; padding: 40px;">
+    <div style="margin: 60px auto; max-width: 1200px; background-color: #2f4f4f;">
+        <h2 style="text-align: center; margin-bottom: 30px; color: #c79c60; font-size: 2.2em; font-weight: 600;">
+            Identified Pest: <i style="color: #ffffff;">Beetle</i>
+        </h2>
 
- <section>
-
-        <div class="container">
-            <h3 style="padding: 15px; background-color: rgb(0, 0, 0); color: #c79c60; font-weight: bold;"
-                class="text-center my-3 content-h3">
-                Recommended Products</h3>
+        <div style="margin: 40px 0;">
+            <h3 style="text-align: center; padding: 20px; background: linear-gradient(145deg, #1e3535, #2a4747); color: #c79c60; font-weight: bold; font-size: 1.8em; border-radius: 15px; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); margin: 0 auto; max-width: 600px;">
+                Recommended Products
+            </h3>
         </div>
 
-<div class="container">
-            <div class="card-columns">
-                <div class="card" style="display:inline-block;">
-                    <div class="card-body text-center card-style">
-                        <img style="border-radius: 5%; margin-left:5%; height:300px; width:300px;"
-                             class="img-fluid" src="static/img/pesticide/beetle/smash.jpg" alt="smash">
-                      <h3 class="card-text">Dose: 1.0-3.0 Tbsp/16 L</h3>
+        <div style="display: flex; justify-content: center; gap: 60px; padding: 30px;">
+            <div style="background: linear-gradient(145deg, #1e3535, #2a4747); border-radius: 25px; padding: 35px; width: 380px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 2px 10px rgba(255, 255, 255, 0.1);">
+                <div style="text-align: center;">
+                    <!-- Image container -->
+                    <div style="background: linear-gradient(145deg, #2a4747, #1e3535); padding: 15px; border-radius: 20px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), inset 0 2px 10px rgba(255, 255, 255, 0.1); margin-bottom: 25px;">
+                        <div style="border: 2px solid rgba(199, 156, 96, 0.3); border-radius: 15px; overflow: hidden;">
+                            <img style="height: 300px; width: 100%; object-fit: cover; display: block;"
+                                 src="static/img/pesticide/beetle/smash.jpg" alt="smash">
+                        </div>
+                    </div>
+
+                    <!-- Dose information -->
+                    <div style="background: linear-gradient(145deg, rgba(46, 74, 74, 0.8), rgba(30, 53, 53, 0.8)); border-radius: 15px; padding: 18px; border: 1px solid rgba(199, 156, 96, 0.3);">
+                        <h3 style="color: #ffffff; font-size: 1.3em; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.5px;">
+                            Dose: <span style="color: #c79c60; font-weight: 600;">1.0-3.0 Tbsp/16 L</span>
+                        </h3>
                     </div>
                 </div>
             </div>
-    </section>
-
+        </div>
+    </div>
+</div>
 {% endblock %}
